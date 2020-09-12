@@ -6,6 +6,6 @@ int InitList(int * list){
     return EXIT_SUCCESS;
 }
 
-// int DestroyList(int * list){
-
-// }
+int DestroyList(int * list){
+    return EXIT_SUCCESS;
+}
