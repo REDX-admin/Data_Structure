@@ -12,6 +12,5 @@ int main(){
         printf("newarray[%d]: %d\n",i,newarray[i]);
     }
     
-    
     return EXIT_SUCCESS;
 }
