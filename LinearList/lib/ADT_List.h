@@ -2,9 +2,11 @@
 #include <stdlib.h>
 #define LISTLEN 10 // Unit sizeof(int)
 
-int InitList(int *);
+int* InitList();
 
-int DestroyList(int *);
+int ShowList(int*);
 
-int ClearList(int *);
+int DestroyList(int*);
+
+int ClearList(int*);
 
