@@ -29,7 +29,7 @@ Status DestroyList(SqList *);
 Status ClearList(SqList *);
 
 // If SqList is EMPTY return TRUE, else return FALSE
-Bool ListEmpty(SqList *);
+Bool ListEmpty(SqList);
 
 // Return SqList numbers of elements
 int ListLength(SqList *);
@@ -55,5 +55,5 @@ Status ListDelete(SqList *, int, ElemType *);
 // visit()
 void ListTraverse(SqList *, void(Visit)(ElemType));
 
-
 #endif
+ 

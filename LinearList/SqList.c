@@ -27,8 +27,8 @@ Status ClearList(SqList * List){
 }
 
 // If SqList is EMPTY return TRUE, else return FALSE
-Bool ListEmpty(SqList * List){
-	return (*List).length == 0 ? TRUE : FALSE; 
+Bool ListEmpty(SqList List){
+	return List.length == 0 ? TRUE : FALSE; 
 }
 
 // Return SqList numbers of elements
@@ -81,9 +81,13 @@ Status NextElem(SqList * List, ElemType cur_e, ElemType * next_e){
 
 // Insert Element
 Status ListInsert(SqList * List, int i, ElemType e){
-	ElemType * newbase, * p, * q;
+	ElemType * newbase;
+	ElemType * p, * q;
+
 	if(List == NULL || (*List).elem == NULL) return ERROR;
+
 	if(i >= (*List).length || i < 1) return ERROR;
+
 	if((*List).length >= (*List).listsize){
 		newbase = (ElemType*)realloc((*List).elem, ((*List).listsize + LISTINCREMENT) * sizeof(ElemType));
 		if (!newbase) exit(OVERFLOW);
@@ -91,6 +95,7 @@ Status ListInsert(SqList * List, int i, ElemType e){
 		(*List).listsize += LISTINCREMENT;
 	}
 	q = &(*List).elem[i-1];
+	
 	for(p = &(*List).elem[(*List).length - 1]; p >= q; --p) *(p + 1) = *p;
 	*q = e;
 	(*List).length++;
