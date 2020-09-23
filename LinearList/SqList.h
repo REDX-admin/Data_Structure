@@ -35,25 +35,25 @@ Bool ListEmpty(SqList *);
 int ListLength(SqList *);
 
 // Return the i-th element
-ElemType GetElem(SqList *, int, SqList *);
+Status GetElem(SqList *, int, ElemType *);
 
 // Return the first E element have the compare() relation
-int LocateElem(SqList *, int, int *);
+int LocateElem(SqList *, ElemType, Status(Compare)(ElemType,ElemType));
 
 // Retuen prior Element
-SqList* PriorElem(SqList *, SqList *, SqList *);
+Status PriorElem(SqList *, ElemType, ElemType *);
 
 // Retuen next Element
-SqList* NextElem(SqList *, SqList *, SqList *);
+Status NextElem(SqList *, ElemType, ElemType *);
 
 // Insert Element
-Status ListInsert(SqList *, int, SqList *);
+Status ListInsert(SqList *, int, ElemType);
 
 // Delete Element & Retuen Delete Element
-SqList* ListDelete(SqList *, int, SqList *);
+Status ListDelete(SqList *, int, ElemType *);
 
 // visit()
-Status ListTraverse(SqList *);
+void ListTraverse(SqList *, void(Visit)(ElemType));
 
 
 #endif
